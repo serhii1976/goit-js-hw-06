@@ -17,14 +17,28 @@ const ingredients = [
 
 // ingredientsListEl.append(...listEl);
 
-// ---------------
+// --------------- MAP
+
+// const ingredientsListEl = document.querySelector("#ingredients");
+// const listEl = ingredients.map((ingredient) => {
+//   const listItemEl = document.createElement("li");
+//   listItemEl.textContent = ingredient;
+//   listItemEl.classList.add("item");
+//   return listItemEl;
+// });
+// console.log(listEl);
+// ingredientsListEl.append(...listEl);
+
+// ---------------- MAP + FUNCTION
 
 const ingredientsListEl = document.querySelector("#ingredients");
-const listEl = ingredients.map((ingredient) => {
-  const listItemEl = document.createElement("li");
-  listItemEl.textContent = ingredient;
-  listItemEl.classList.add("item");
-  return listItemEl;
-});
-console.log(listEl);
-ingredientsListEl.append(...listEl);
+
+const makeItemLiEl = (ingredients) => {
+  return ingredients.map((ingredient) => {
+    const listItemEl = document.createElement("li");
+    listItemEl.textContent = ingredient;
+    listItemEl.classList.add("item");
+    return listItemEl;
+  });
+};
+ingredientsListEl.append(...makeItemLiEl(ingredients));
