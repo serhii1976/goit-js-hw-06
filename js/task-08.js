@@ -9,7 +9,7 @@ function onFormSubmit(event) {
   } = event.currentTarget;
 
   if (email.value === "" || password.value === "") {
-    window.alert("Будь ласка,заповніть всі поля!");
+    return alert("Будь ласка,заповніть всі поля!");
   }
   console.log({ email: email.value, password: password.value });
   event.currentTarget.reset();
